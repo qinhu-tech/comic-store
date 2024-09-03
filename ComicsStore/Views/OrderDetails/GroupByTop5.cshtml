@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ComicsStore.Models.ViewModel>
+
+@{
+    ViewBag.Title = "GroupByTop5";
+}
+
+<link href="~/Content/ProViewStyle.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="~/Content/ProductsStyle.css" rel="stylesheet" />
+
+<ul class="listing">
+    @foreach (var pro in Model)
+    {
+
+        <li class="product">
+            <a class="img-wrapper" href="~/Products/Details/@pro.IDPro">
+                <img src="@Url.Content(pro.ImgPro)" height="240" width="240" alt="Blue running shoe" />
+            </a>
+
+            <div class="info">
+                <div class="title">@Html.DisplayFor(model => pro.NamePro)</div>
+                <div class="price">@Html.DisplayFor(model => pro.pricePro)</div>
+            </div>
+
+            <div class="actions-wrapper">
+                <a href="#" class="add-btn wishlist">Lưu</a>
+                <a href="~/Cart/AddToCart/@pro.IDPro" class="add-btn cart">Thêm vào giỏ hàng</a>
+            </div>
+        </li>
+
+    }
+</ul>
+

@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/LayoutPay.css" rel="stylesheet" />
+<link href="~/Content/ThanhToan.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pay</title>
+</head>
+<body>
+    <div class="logo">
+        <img class="img-logo" src="~/Content/img/z3861200517714_5b844d2ddc7feef8fab723b19aaf1ccf.jpg" />
+    </div>
+    <h2>Thông tin giao hàng</h2>
+     <table id="TablePay">
+        <tr>
+          <td colspan="2"></td>
+                 <td colspan="4">
+         @using (Html.BeginForm("CheckOut", "Cart"))
+            {
+                     <table style="border-collapse:separate;border-spacing:5px">
+                         <tr>
+                             <td>Họ Tên:</td>
+                             <td><input type="text" name="Name" required /></td>
+                         </tr>
+                         <tr>
+                             <td>Email:</td>
+                             <td><input type="text" name="EMAIL" required /></td>
+                         </tr>
+                         <tr>
+                             <td>Code Customer:</td>
+                             <td><input type="number" name="CodeCustomer" required /></td>
+                         </tr>
+                         <tr>
+                             <td>AddressDelivery:</td>
+                             <td><input type="text" name="AddressDelivery" required /></td>
+                         </tr>
+                         <tr>
+                             <td></td>
+                             <td>
+                                 <input type="submit" value="CheckOut" class="btn btn-success" />
+                                 <a href="@Url.Action("Create","Customer")" class="btn btn Reg">Register</a>
+                             </td>
+                         </tr>
+                     </table>
+            }
+         </td>
+        </tr>
+     </table>
+     
+</body>
+</html>

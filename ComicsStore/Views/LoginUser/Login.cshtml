@@ -1,0 +1,59 @@
+﻿@model ComicsStore.Models.Customer
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+<link href="~/Content/AcountStyle.css" rel="stylesheet" />
+
+@using (Html.BeginForm("LoginAcount", "LoginUser"))
+{
+    @Html.AntiForgeryToken()
+    <script src="https://kit.fontawesome.com/fe8f18c418.js" crossorigin="anonymous"></script>
+
+
+    <div class="login">
+        <div class="left-text">
+            <h1>Đăng nhập để kết nối với chúng tôi</h1><i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-discord"></i>
+            <p>Mã user : 69</p>
+            <p>Password: 69</p>
+        </div>
+
+
+
+        <div class="login-container">
+
+            <div class="login-box">
+                <table>
+                    <tr>
+                        <td>@Html.TextBoxFor(model => model.NameCus, new { placeholder = "Tên người dùng", @class = "text-box" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.ValidationMessageFor(model => model.IDCus)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(model => model.PassCus, new { placeholder = "Password", @class = "text-box" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.ValidationMessageFor(model => model.PassCus)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Login" class="login-btn" /></td>
+                    </tr>
+
+                    <p>@ViewBag.ErrorInfo</p>
+
+                </table>
+                <p style="margin-top: 10px;">hoặc đăng ký tại <a style="color: #1877f2;" href="~/LoginUser/Register">đây</a></p>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+

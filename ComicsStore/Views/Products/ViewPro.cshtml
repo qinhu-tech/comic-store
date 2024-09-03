@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ComicsStore.Models.Product>
+
+
+<ul class="listing">
+    @foreach (var pro in Model)
+    {
+
+        <li class="product">
+            <a class="img-wrapper" href="~/Products/Details/@pro.ProductID">
+                <img src="@Url.Content(pro.ImagePro)" height="240" width="240" alt="Blue running shoe" />
+            </a>
+
+            <div class="info">
+                <div class="title">@Html.DisplayFor(model => pro.NamePro)</div>
+                <div class="price">@Html.DisplayFor(model => pro.Price)</div>
+            </div>
+
+            <div class="actions-wrapper">
+                <a href="#" class="add-btn wishlist">Lưu</a>
+                <a href="~/Cart/AddToCart/@pro.ProductID" class="add-btn cart">Thêm vào giỏ hàng</a>
+            </div>
+        </li>
+
+    }    
+    </div>
+</ul>
+

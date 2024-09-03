@@ -1,0 +1,44 @@
+﻿body {
+}
+*{
+    margin:0;
+    padding:0;
+}
+p{
+    margin:0;
+}
+.box-pro { /*
+    height: 500px;*/
+    width: 210px;/*
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;*/
+    margin-top: 20px;
+    margin-right: 20px;
+    transition: all .2s ease-in-out;
+}
+.pro-contain{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.box-des{
+    width: 210px;
+    margin: 0;
+}
+.pro-name{
+    text-align: center;
+
+}
+.box-pro :hover {
+    opacity: 0.95;
+    transform: scale(1.05);
+}
+ul {
+    list-style-type: none;
+    margin-left:0;
+}
+.nav-li {
+    font-size: 19px;
+    border-top: 1px solid #e0e0e0;
+    padding: 5px;
+    margin:0;
+}

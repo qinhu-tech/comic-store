@@ -1,0 +1,67 @@
+﻿@model ComicsStore.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+<link href="~/Content/DetailsStyle.css" rel="stylesheet" />
+
+<h2 style="text-align: center; margin-top: 30px; color: #532d6d; font-weight: bold;">Thông Tin Chi Tiết</h2>
+
+<div>
+    <hr />
+    <div class="pro-con">
+        <img src="@Url.Content(Model.ImagePro)" alt="Alternate Text" height="500px" width="470px" />
+        <div class="pro-des">
+            <dl class="dl-horizontal">
+                <dt class="title-name">
+                    @Html.DisplayFor(model => model.NamePro)
+                    <button class="btnSub">
+                        <a href="/Cart/AddToCart/@Model.ProductID" style="color: white">Mua Ngay!</a>
+                    </button>
+                    <button class="btnSub">
+                        <a href="@ViewBag.returnUrl" style="color: white">Quay Về</a>
+                    </button>
+                </dt>
+                <hr />
+                <div class="price-title">
+                    @Html.DisplayFor(model => model.Price) đ
+                </div>
+                <dt style="margin-top: 10px;">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Quantity)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Category1.NameCate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Category1.NameCate)
+                </dd>
+                <div class="desPro">
+                    <strong>@Html.DisplayNameFor(model => model.DecriptionPro)</strong>
+                    <p>@Html.DisplayFor(model => model.DecriptionPro)</p>
+                </div>
+
+    
+
+                @*<button class="btnSub">
+            <a href="/Products/Edit/@Model.ProductID" style="color: white">Sửa</a>
+        </button>
+        <button class="btnSub">
+            <a href="/Products/Delete/@Model.ProductID" style="color: white">Xóa</a>
+        </button>*@
+
+
+
+            </dl>
+        </div>
+    </div>   
+    <hr />
+    <div style="margin-bottom: 50px;"></div>
+    
+</div>
+    

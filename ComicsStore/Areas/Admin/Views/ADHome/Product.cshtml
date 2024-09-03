@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ComicsStore.Models.Product>
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DecriptionPro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>       
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category1.NameCate)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamePro)
+        </td>
+        <td style="max-width: 200px; overflow:hidden;">
+            @Html.DisplayFor(modelItem => item.DecriptionPro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>      
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category1.NameCate)
+        </td>
+      
+        <td>
+            <a href="/Products/Edit/@item.ProductID">Chỉnh Sửa</a>   |            
+            <a href="/Products/Delete/@item.ProductID">Xóa</a>
+        </td>
+    </tr>
+}
+
+</table>
+<a href="~/Products/Create">Tạo thêm hàng mới</a>

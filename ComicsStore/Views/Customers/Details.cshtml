@@ -1,0 +1,58 @@
+﻿@model ComicsStore.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+<link href="~/Content/profile.css" rel="stylesheet" />
+<style>
+    .conn{
+        /*display:flex;
+        justify-content: center;*/
+        margin-left: 30px;
+    }
+</style>
+<h4>THÔNG TIN TÀI KHOẢN</h4>
+<hr />
+<div class="profile-container">
+    <div class="conn">
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.NameCus)
+            </dt>
+
+            <dd style="font-size: 30px;">
+                @Html.DisplayFor(model => model.NameCus)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GenderCus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GenderCus)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneCus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneCus)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EmailCus)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmailCus)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCus }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

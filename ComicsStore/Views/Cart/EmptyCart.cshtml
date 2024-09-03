@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+<link href="~/Content/LayoutCart.css" rel="stylesheet" />
+<h2 style="text-align: center;">Giỏ hàng</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Hình sản phẩm</th>
+            <th>Giá sản phẩm</th>
+            <th>Số lượng sản phẩm</th>
+            <th>Thành tiền</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="6">
+                Chưa có sản phẩm nào ...
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <a href="@Url.Action("Index","Home")" class="Con-btn-button">Tiếp tục mua hàng</a>
+</div>

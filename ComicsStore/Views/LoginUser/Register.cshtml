@@ -1,0 +1,39 @@
+﻿@model ComicsStore.Models.Customer
+@{
+    ViewBag.Title = "RegisterUser";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+<link href="~/Content/AcountStyle.css" rel="stylesheet" />
+
+@using (Html.BeginForm("RegisterUser", "LoginUser", FormMethod.Post, new { enctype = "multi/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="login">
+        <div class="left-text">
+            <h2>Tạo Tài Khoản Mới</h2>
+        </div>
+
+        <div class="login-container">
+            <div class="login-box">
+
+
+                <p>@Html.TextBoxFor(model => model.NameCus, new { htmlAttributes = new { @class = "text-box" }, placeholder = "Tên người dùng" })</p>
+                <p>@Html.ValidationMessageFor(model => model.NameCus)</p>
+
+                <p class="text-box">@Html.TextBoxFor(model => model.PassCus, new { placeholder = "Password" })</p>
+                <p>@Html.ValidationMessageFor(model => model.PassCus)</p>
+
+                <p class="text-box">@Html.TextBoxFor(model => model.ConfirmPassCus, new { placeholder = "ConfirmPass" })</p>
+                <p>@Html.ValidationMessageFor(model => model.ConfirmPassCus)</p>
+
+
+                <input type="submit" value="register" class="login-btn" />
+                <p>@ViewBag.ErrorRegister</p>
+                <p></p>
+
+            </div>
+        </div>
+    </div>
+}
+
+

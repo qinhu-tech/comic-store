@@ -1,0 +1,97 @@
+﻿@*model IEnumerable<ComicsStore.Models.Product>*@
+@using ComicsStore.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+<link href="~/Content/ProViewStyle.css" rel="stylesheet" />
+<style>
+    .MenuPage li {
+        display: inline;
+        border: 1px solid black;
+        width: 40px;
+        height:40px;
+        
+    }
+    .MenuPage a {
+        padding:13px;
+    }
+
+    .MenuPage {
+        position:relative;
+        left: 50%;
+    }
+
+        .MenuPage :checked {
+            background-color: blue;
+        }
+</style>
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="~/Content/ProductsStyle.css" rel="stylesheet" />
+
+<div class="pro-contain">
+
+    <ul class="nav-list">
+        @using (Html.BeginForm("Index", "Products", FormMethod.Get))
+        {
+            <div class="search-contianer" style="padding-left:10px">
+                @Html.TextBox("searching")
+                <input type="submit" value="Search" />
+            </div>
+        }
+        @Html.ActionLink("Search theo giá", "SearchOption", "Products")
+        <li class="nav-li" style="padding-left:10px"><strong>DANH MỤC</strong></li>
+        @{Html.RenderAction("CatePartial", "Products");}
+    </ul>
+    <ul class="listing">
+        @if (Model.Count() == 0)
+        {
+            <p>Không Tìm Thấy sản phẩm Nào!</p>
+        }
+
+        else
+        {
+
+            foreach (var item in Model)
+            {
+
+                <li class="product">
+                    <a class="img-wrapper" href="~/Products/Details/@item.ProductID">
+                        <img src="@Url.Content(item.ImagePro)" height="240" width="240" alt="Blue running shoe" />
+                    </a>
+
+                    <div class="info">
+                        <div class="title">@Html.DisplayFor(model => item.NamePro)</div>
+                        <div class="price">@Html.DisplayFor(model => item.Price)</div>
+                    </div>
+
+                    <div class="actions-wrapper">
+                        <a href="#" class="add-btn wishlist">Lưu</a>
+                        <a href="~/Cart/AddToCart/@item.ProductID" class="add-btn cart">Thêm vào giỏ hàng</a>
+                    </div>
+                </li>
+
+            }
+            @*<div>
+                    @{Html.RenderAction("ViewPro", "Products");}
+                </div>*@
+        }
+    </ul>
+</div>
+ 
+<div>
+    <div class="MenuPage">
+        Trang @(Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber) / @(Model.PageCount)
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+
+
+
+@*@Html.ActionLink("Tạo hàng mới", "Create", "Products")*@
+

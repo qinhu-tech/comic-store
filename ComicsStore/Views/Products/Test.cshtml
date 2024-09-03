@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ComicsStore.Models.Product>
+
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+
+@foreach (var item in Model)
+            {
+                    @Html.DisplayFor(model => item.NamePro)
+            }
+

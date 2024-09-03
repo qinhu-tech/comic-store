@@ -1,0 +1,42 @@
+﻿#horizontalmenu {
+    height: 50px;
+    background-color: #532d6d;
+}
+#horizontalmenu ul {    
+    list-style: none;
+    padding:12px;
+}
+
+#horizontalmenu li {
+    float: left;
+    position: relative;
+    padding-right: 100px;
+    display: block;
+   
+}
+
+    #horizontalmenu li ul {
+        display: none;
+        position: absolute;    
+        z-index:100;
+    }
+
+    #horizontalmenu li:hover ul {
+        display: block;
+        background: black;
+        height: auto;
+        width: 204px;
+        
+    }
+
+    #horizontalmenu li ul li {
+        clear: both;
+        border-style: none;
+    }
+#horizontalmenu li a {
+    text-decoration: none;
+    padding: 10px 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    font-size: 20px;
+}

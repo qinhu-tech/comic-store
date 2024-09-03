@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d01caecbeef74fc1adb2cbb640d063ce" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="ComicsStoreModel.AdminUser" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsStoreModel.Author" Width="1.5" PointX="5.375" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsStoreModel.Category" Width="1.5" PointX="3.375" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsStoreModel.Customer" Width="1.5" PointX="5.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsStoreModel.OrderDetail" Width="1.5" PointX="10" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsStoreModel.OrderPro" Width="1.5" PointX="7.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsStoreModel.Product" Width="1.5" PointX="2.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsStoreModel.Publisher" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ComicsStoreModel.FK__Product__AuthorI__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsStoreModel.FK_Pro_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsStoreModel.FK__OrderPro__IDCus__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsStoreModel.FK__OrderPro__IDCus__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsStoreModel.FK__OrderDeta__IDOrd__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsStoreModel.FK__OrderDeta__IDOrd__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsStoreModel.FK__OrderDeta__IDPro__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsStoreModel.FK__OrderDeta__IDPro__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsStoreModel.FK__Product__Publish__38996AB5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

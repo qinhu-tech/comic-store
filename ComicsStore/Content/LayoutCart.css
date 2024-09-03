@@ -1,0 +1,34 @@
+﻿.table{
+    border-block:solid;
+}
+
+.csw-btn-button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 30px;
+    color: #ffffff !important;
+    border-radius: 5px;
+    background: black;
+    border: 1px solid #9B6A1D;
+    transition: 0.3s;
+    
+}
+
+.csw-btn-button:hover {
+   background: red;
+}
+.Con-btn-button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 3px 10px;
+    color: #ffffff !important;
+    border-radius: 5px;
+    background: black;
+    border: 1px solid #9B6A1D;
+    transition: 0.3s;
+}
+.Con-btn-button:hover {
+    background: #532d6d;
+}
+
+

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ComicsStore.Models.Product>
+<div class="main-div">
+    @foreach (var item in Model) 
+    {
+        <div class="box-pro">
+            <img src="@Url.Content(item.ImagePro)" height="100px" width="100px" class="img-pro"/>
+            <div>@Html.DisplayFor(modelItem => item.ProductID)</div>
+            <div>@Html.DisplayFor(modelItem => item.NamePro)</div>
+            <div></div>
+        </div>
+    }
+</div> 

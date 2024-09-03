@@ -1,0 +1,27 @@
+﻿@using ComicsStore.Models
+@model List<Category>
+
+<link href="~/Content/ProViewStyle.css" rel="stylesheet" />
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="~/Content/ProductsStyle.css" rel="stylesheet" />
+
+<style>
+   ul{
+       padding-left:10px;
+   }
+</style>
+<ul class="nav-list">
+    @{
+        foreach (var item in Model)
+        {
+            <li class="nav-li">
+                @Html.ActionLink(item.NameCate, "Index", "Products", new { category = item.IDCate}, "")
+            </li>
+        }
+    }
+</ul>
+
+
+
